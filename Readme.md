@@ -114,11 +114,7 @@ Les PR sont les bienvenues !
 📌 [Ouvrir une issue](https://github.com/abrahamkoloboe27/Setup-Databases-With-Docker/issues)  
 💡 [Proposer une amélioration](https://github.com/abrahamkoloboe27/Setup-Databases-With-Docker/pulls)
 
-## 📄 Licence
 
-MIT License - Voir le fichier [LICENSE](LICENSE)
-
----
 
 **Créé avec ❤️ par Abraham Koloboe**  
 [![GitHub](https://img.icons8.com/fluent/48/000000/github.png)](https://github.com/abrahamkoloboe27)
