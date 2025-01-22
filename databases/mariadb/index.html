@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>MariaDB - Docker DB Starter Guide</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "MariaDB";
+        var mkdocs_page_input_path = "databases/mariadb.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Docker DB Starter Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../makefile-usage/">Utilisation du Makefile</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bases de données</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../postgres/">PostgreSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mysql/">MySQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cassandra/">Cassandra</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">MariaDB</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#commandes-makefile">Commandes Makefile</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#demarrer-mariadb">Démarrer MariaDB</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#arreter-mariadb">Arrêter MariaDB</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nettoyer-mariadb">Nettoyer MariaDB</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration-par-defaut">Configuration par défaut</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connexion-a-mariadb">Connexion à MariaDB</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#utilisation-du-client-en-ligne-de-commande">Utilisation du client en ligne de commande</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connexion-avec-un-client-graphique">Connexion avec un client graphique</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#verification-des-logs">Vérification des logs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#astuces">Astuces</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#liens-utiles">Liens utiles</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../dbeaver/">Dbeaver</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Docker DB Starter Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Bases de données</li>
+      <li class="breadcrumb-item active">MariaDB</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="mariadb">MariaDB</h1>
+<p>MariaDB est un fork open-source de MySQL, offrant une compatibilité complète avec des performances optimisées et des fonctionnalités étendues.</p>
+<hr />
+<h2 id="commandes-makefile">Commandes Makefile</h2>
+<h3 id="demarrer-mariadb">Démarrer MariaDB</h3>
+<p>Pour démarrer un conteneur MariaDB à l'aide du <code>Makefile</code> :
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>run-mariadb
+</code></pre></div></p>
+<h3 id="arreter-mariadb">Arrêter MariaDB</h3>
+<p>Pour arrêter le conteneur MariaDB en cours d'exécution :
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>stop-mariadb
+</code></pre></div></p>
+<h3 id="nettoyer-mariadb">Nettoyer MariaDB</h3>
+<p>Pour supprimer le conteneur et les volumes associés à MariaDB :
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>clean-mariadb
+</code></pre></div></p>
+<hr />
+<h2 id="configuration-par-defaut">Configuration par défaut</h2>
+<p>Les paramètres par défaut définis dans le <code>Makefile</code> sont :</p>
+<ul>
+<li><strong>Image Docker</strong> : <code>mariadb:10.10</code></li>
+<li><strong>Port hôte</strong> : <code>3307</code></li>
+<li><strong>Utilisateur root</strong> : <code>root</code>/<code>root</code></li>
+<li><strong>Utilisateur standard</strong> : <code>mariadb</code>/<code>mariadb</code></li>
+<li><strong>Base de données</strong> : <code>mariadb</code></li>
+<li><strong>Volume de données</strong> : Monté dans <code>/var/lib/mysql</code> dans le conteneur</li>
+</ul>
+<hr />
+<h2 id="connexion-a-mariadb">Connexion à MariaDB</h2>
+<h3 id="utilisation-du-client-en-ligne-de-commande">Utilisation du client en ligne de commande</h3>
+<p>Connectez-vous avec l'utilisateur standard :
+<div class="highlight"><pre><span></span><code>mysql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-P<span class="w"> </span><span class="m">3307</span><span class="w"> </span>-u<span class="w"> </span>mariadb<span class="w"> </span>-p
+</code></pre></div>
+Mot de passe : <code>mariadb</code></p>
+<h3 id="connexion-avec-un-client-graphique">Connexion avec un client graphique</h3>
+<p>Configuration recommandée pour DBeaver :
+<div class="highlight"><pre><span></span><code>- Hôte : localhost
+- Port : 3307
+- Base de données : mariadb
+- Utilisateur : mariadb
+- Mot de passe : mariadb
+- Paramètres avancés :
+  allowPublicKeyRetrieval=true
+  useSSL=false
+</code></pre></div></p>
+<hr />
+<h2 id="verification-des-logs">Vérification des logs</h2>
+<p>Pour consulter les logs du conteneur MariaDB :
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>mariadb-local
+</code></pre></div></p>
+<hr />
+<h2 id="astuces">Astuces</h2>
+<ol>
+<li>
+<p><strong>Migration depuis MySQL</strong> :
+   <div class="highlight"><pre><span></span><code>mysqldump<span class="w"> </span>-h<span class="w"> </span>mysql-host<span class="w"> </span>-u<span class="w"> </span>user<span class="w"> </span>-p<span class="w"> </span>db_name<span class="w"> </span><span class="p">|</span><span class="w"> </span>mysql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-P<span class="w"> </span><span class="m">3307</span><span class="w"> </span>-u<span class="w"> </span>mariadb<span class="w"> </span>-p<span class="w"> </span>mariadb
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Activation du moteur ColumnStore</strong> :
+   <div class="highlight"><pre><span></span><code><span class="n">INSTALL</span><span class="w"> </span><span class="n">SONAME</span><span class="w"> </span><span class="s1">&#39;ha_columnstore&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Gestion des utilisateurs</strong> :
+   <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;nouveau_user&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="p">;</span>
+<span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">mariadb</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;nouveau_user&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h2 id="liens-utiles">Liens utiles</h2>
+<ul>
+<li><a href="https://mariadb.com/kb/fr/">Documentation officielle MariaDB</a></li>
+<li><a href="https://www.heidisql.com/">HeidiSQL (Client Windows)</a></li>
+<li><a href="https://mariadb.com/fr/resources/migration/">Outils de migration MySQL vers MariaDB</a></li>
+</ul>
+<hr />
+<p>MariaDB est particulièrement adapté pour les applications nécessitant une rétrocompatibilité MySQL avec des améliorations de performances et de sécurité. Son support natif des moteurs de stockage multiples (InnoDB, ColumnStore, Aria) en fait un choix polyvalent.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../cassandra/" class="btn btn-neutral float-left" title="Cassandra"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../dbeaver/" class="btn btn-neutral float-right" title="Dbeaver">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../cassandra/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../dbeaver/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

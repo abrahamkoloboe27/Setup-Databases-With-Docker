@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Cassandra - Docker DB Starter Guide</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Cassandra";
+        var mkdocs_page_input_path = "databases/cassandra.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Docker DB Starter Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../makefile-usage/">Utilisation du Makefile</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bases de données</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../postgres/">PostgreSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mysql/">MySQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mongodb/">MongoDB</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Cassandra</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#commandes-makefile">Commandes Makefile</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#demarrer-cassandra">Démarrer Cassandra</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#arreter-cassandra">Arrêter Cassandra</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nettoyer-cassandra">Nettoyer Cassandra</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration-par-defaut">Configuration par défaut</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connexion-a-cassandra">Connexion à Cassandra</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#utilisation-de-cqlsh">Utilisation de CQLSH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connexion-avec-un-client-graphique">Connexion avec un client graphique</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#verification-des-logs">Vérification des logs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#astuces">Astuces</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#liens-utiles">Liens utiles</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mariadb/">MariaDB</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../dbeaver/">Dbeaver</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Docker DB Starter Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Bases de données</li>
+      <li class="breadcrumb-item active">Cassandra</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="cassandra">Cassandra</h1>
+<p>Cassandra est une base de données NoSQL distribuée conçue pour gérer de grandes quantités de données sur plusieurs serveurs avec haute disponibilité.</p>
+<hr />
+<h2 id="commandes-makefile">Commandes Makefile</h2>
+<h3 id="demarrer-cassandra">Démarrer Cassandra</h3>
+<p>Pour démarrer un conteneur Cassandra à l'aide du <code>Makefile</code> :
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>run-cassandra
+</code></pre></div></p>
+<h3 id="arreter-cassandra">Arrêter Cassandra</h3>
+<p>Pour arrêter le conteneur Cassandra en cours d'exécution :
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>stop-cassandra
+</code></pre></div></p>
+<h3 id="nettoyer-cassandra">Nettoyer Cassandra</h3>
+<p>Pour supprimer le conteneur et les volumes associés à Cassandra :
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>clean-cassandra
+</code></pre></div></p>
+<hr />
+<h2 id="configuration-par-defaut">Configuration par défaut</h2>
+<p>Les paramètres par défaut définis dans le <code>Makefile</code> sont :</p>
+<ul>
+<li><strong>Image Docker</strong> : <code>cassandra:4.1</code></li>
+<li><strong>Port hôte</strong> : <code>9042</code></li>
+<li><strong>Nom d'utilisateur</strong> : <code>cassandra</code></li>
+<li><strong>Mot de passe</strong> : <code>cassandra</code></li>
+<li><strong>Volume de données</strong> : Monté dans <code>/var/lib/cassandra</code> dans le conteneur</li>
+</ul>
+<hr />
+<h2 id="connexion-a-cassandra">Connexion à Cassandra</h2>
+<h3 id="utilisation-de-cqlsh">Utilisation de CQLSH</h3>
+<p>Connectez-vous avec la commande :
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>cassandra-local<span class="w"> </span>cqlsh<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>-p<span class="w"> </span>cassandra
+</code></pre></div></p>
+<h3 id="connexion-avec-un-client-graphique">Connexion avec un client graphique</h3>
+<p>Configuration recommandée pour DBeaver :
+<div class="highlight"><pre><span></span><code>- Hôte : localhost
+- Port : 9042
+- Keyspace : system
+- Utilisateur : cassandra
+- Mot de passe : cassandra
+- Paramètres avancés :
+  SSL = Désactivé
+  Consistency Level = LOCAL_ONE
+</code></pre></div></p>
+<hr />
+<h2 id="verification-des-logs">Vérification des logs</h2>
+<p>Pour consulter les logs du conteneur Cassandra :
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>cassandra-local
+</code></pre></div></p>
+<hr />
+<h2 id="astuces">Astuces</h2>
+<ol>
+<li>
+<p><strong>Gestion du cluster</strong> :
+   Vérifier l'état du nœud :
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>cassandra-local<span class="w"> </span>nodetool<span class="w"> </span>status
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Sauvegarde de données</strong> :
+   Créer un snapshot :
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>cassandra-local<span class="w"> </span>nodetool<span class="w"> </span>snapshot
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Requêtes CQL basiques</strong> :
+   <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">KEYSPACE</span><span class="w"> </span><span class="n">demo</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">replication</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;SimpleStrategy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;replication_factor&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="err">}</span><span class="p">;</span>
+<span class="n">USE</span><span class="w"> </span><span class="n">demo</span><span class="p">;</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h2 id="liens-utiles">Liens utiles</h2>
+<ul>
+<li><a href="https://cassandra.apache.org/doc/latest/">Documentation officielle Cassandra</a></li>
+<li><a href="https://www.datastax.com/fr/learn/cql-cheat-sheet">CQL Cheat Sheet</a></li>
+<li><a href="https://www.datastax.com/fr/devcenter">DataStax DevCenter (GUI)</a></li>
+</ul>
+<hr />
+<p>Cassandra est idéale pour les applications nécessitant une haute disponibilité et une scalabilité linéaire. Son modèle de partitionnement distribué en fait un choix privilégié pour le Big Data et les architectures cloud.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mongodb/" class="btn btn-neutral float-left" title="MongoDB"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mariadb/" class="btn btn-neutral float-right" title="MariaDB">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mongodb/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mariadb/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
