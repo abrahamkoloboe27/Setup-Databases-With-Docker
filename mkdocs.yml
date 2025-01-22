@@ -1,0 +1,36 @@
+site_name: Docker DB Starter Guide
+theme: 
+  name: readthedocs
+  features:
+    - navigation.tabs
+    - navigation.indexes
+  palette:
+    - scheme: default
+      primary: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Accueil: index.md
+  - Installation: installation.md
+  - 'Utilisation du Makefile': makefile-usage.md
+  - Bases de données:
+    - PostgreSQL: databases/postgres.md
+    - MySQL: databases/mysql.md
+    - Redis: databases/redis.md
+    - MongoDB: databases/mongodb.md
+    - Cassandra: databases/cassandra.md
+    - MariaDB: databases/mariadb.md
+  - Dbeaver: dbeaver.md
+  - FAQ: faq.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
