@@ -4,6 +4,30 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/abrahamkoloboe27/Setup-Databases-With-Docker?style=social)](https://github.com/abrahamkoloboe27/Setup-Databases-With-Docker)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com)
+[![GNU Make](https://img.shields.io/badge/GNU%20Make-FF6F00?logo=gnu&logoColor=white)](https://www.gnu.org/software/make/)
+[![DBeaver](https://img.shields.io/badge/DBeaver-2C2255?logo=eclipseide&logoColor=white)](https://dbeaver.io)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com)
+[![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)](https://redis.io)
+[![Cassandra](https://img.shields.io/badge/Cassandra-1287B1?logo=apachecassandra&logoColor=white)](https://cassandra.apache.org)
+[![MariaDB](https://img.shields.io/badge/MariaDB-003545?logo=mariadb&logoColor=white)](https://mariadb.org)
+
+## 🌟 Technologies
+
+| Composant       | Logo Badge                                                                                                   | Lien Officiel                          |
+|-----------------|-------------------------------------------------------------------------------------------------------------|----------------------------------------|
+| **Docker**      | [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](#)                      | https://www.docker.com                 |
+| **GNU Make**    | [![GNU Make](https://img.shields.io/badge/GNU%20Make-FF6F00?logo=gnu&logoColor=white)](#)                   | https://www.gnu.org/software/make/     |
+| **DBeaver**     | [![DBeaver](https://img.shields.io/badge/DBeaver-2C2255?logo=eclipseide&logoColor=white)](#)                | https://dbeaver.io                     |
+| **MySQL**       | [![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)](#)                        | https://www.mysql.com                  |
+| **PostgreSQL**  | [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)](#)          | https://www.postgresql.org             |
+| **MongoDB**     | [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)](#)                   | https://www.mongodb.com                |
+| **Redis**       | [![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)](#)                        | https://redis.io                       |
+| **Cassandra**   | [![Cassandra](https://img.shields.io/badge/Cassandra-1287B1?logo=apachecassandra&logoColor=white)](#)       | https://cassandra.apache.org           |
+| **MariaDB**     | [![MariaDB](https://img.shields.io/badge/MariaDB-003545?logo=mariadb&logoColor=white)](#)                  | https://mariadb.org                    |
+
 
 ## 🚀 Pourquoi ce projet ?
 
