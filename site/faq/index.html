@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>FAQ - Docker DB Starter Guide</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FAQ";
+        var mkdocs_page_input_path = "faq.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Docker DB Starter Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../makefile-usage/">Utilisation du Makefile</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bases de données</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../databases/postgres/">PostgreSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../databases/mysql/">MySQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../databases/redis/">Redis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../databases/mongodb/">MongoDB</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../databases/cassandra/">Cassandra</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../databases/mariadb/">MariaDB</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../dbeaver/">Dbeaver</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">FAQ</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#problemes-courants">Problèmes courants</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#erreur-public-key-retrieval-avec-mysql">Erreur "Public Key Retrieval" avec MySQL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reinitialiser-toutes-les-donnees">Réinitialiser toutes les données</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#acces-aux-bases-depuis-lexterieur">Accès aux bases depuis l'exterieur</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration-avancee">Configuration avancée</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#modifier-les-ports">Modifier les ports</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#monitoring-des-performances">Monitoring des performances</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sauvegardes-automatisees">Sauvegardes automatisées</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#securite">Sécurité</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#activer-lauthentification-redis">Activer l'authentification Redis</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#chiffrer-les-connexions">Chiffrer les connexions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contact-contributions">🔗 Contact &amp; Contributions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#signaler-un-bug">🐛 Signaler un bug</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bonnes-pratiques">❗ Bonnes pratiques</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Docker DB Starter Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">FAQ</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="foire-aux-questions">❓ Foire Aux Questions</h1>
+<h2 id="problemes-courants">Problèmes courants</h2>
+<h3 id="erreur-public-key-retrieval-avec-mysql">Erreur "Public Key Retrieval" avec MySQL</h3>
+<p><strong>Solution</strong> :<br />
+1. Dans DBeaver &gt; Propriétés du pilote :
+<div class="highlight"><pre><span></span><code><span class="na">allowPublicKeyRetrieval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true  </span>
+<span class="na">useSSL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false  </span>
+</code></pre></div>
+2. Redémarrez le conteneur :
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>clean-mysql<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>run-mysql
+</code></pre></div></p>
+<h3 id="reinitialiser-toutes-les-donnees">Réinitialiser toutes les données</h3>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>clean-all
+rm<span class="w"> </span>-rf<span class="w"> </span>~/docker/*
+</code></pre></div>
+<h3 id="acces-aux-bases-depuis-lexterieur">Accès aux bases depuis l'exterieur</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remplacer &#39;localhost&#39; par votre IP locale</span>
+mysql<span class="w"> </span>-h<span class="w"> </span><span class="m">192</span>.168.1.10<span class="w"> </span>-P<span class="w"> </span><span class="m">3306</span><span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p
+</code></pre></div>
+<h2 id="configuration-avancee">Configuration avancée</h2>
+<h3 id="modifier-les-ports">Modifier les ports</h3>
+<p>Éditez le Makefile :
+<div class="highlight"><pre><span></span><code><span class="c"># Avant</span>
+<span class="nf">run-postgres</span><span class="o">:</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">1234</span>:5432
+
+<span class="c"># Après (exemple pour PostgreSQL)</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">5432</span>:5432
+</code></pre></div></p>
+<h3 id="monitoring-des-performances">Monitoring des performances</h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>stats<span class="w"> </span>--format<span class="w"> </span><span class="s2">&quot;table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}&quot;</span>
+</code></pre></div>
+<h3 id="sauvegardes-automatisees">Sauvegardes automatisées</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Exemple pour MySQL</span>
+<span class="m">0</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>mysqldump<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-proot<span class="w"> </span>--all-databases<span class="w"> </span>&gt;<span class="w"> </span>~/backups/mysql_<span class="k">$(</span>date<span class="w"> </span>+<span class="se">\%</span>F<span class="k">)</span>.sql
+</code></pre></div>
+<h2 id="securite">Sécurité</h2>
+<h3 id="activer-lauthentification-redis">Activer l'authentification Redis</h3>
+<ol>
+<li>Modifiez le Makefile :
+<div class="highlight"><pre><span></span><code><span class="nf">run-redis</span><span class="o">:</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">REDIS_PASSWORD</span><span class="o">=</span>votre_mdp
+</code></pre></div></li>
+<li>Redémarrez :
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>clean-redis<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>run-redis
+</code></pre></div></li>
+</ol>
+<h3 id="chiffrer-les-connexions">Chiffrer les connexions</h3>
+<div class="highlight"><pre><span></span><code><span class="c"># Exemple pour PostgreSQL</span>
+<span class="nf">run-postgres</span><span class="o">:</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">POSTGRES_SSL</span><span class="o">=</span>on
+<span class="w">  </span>-v<span class="w"> </span>~/ssl:/ssl
+</code></pre></div>
+<h2 id="contact-contributions">🔗 Contact &amp; Contributions</h2>
+<p><strong>Dépôt GitHub du projet</strong> :<br />
+<a href="https://github.com/abrahamkoloboe27/Setup-Databases-With-Docker">https://github.com/abrahamkoloboe27/Setup-Databases-With-Docker</a><br />
+<em>(Configuration Docker clé en main pour bases de données)</em></p>
+<p><strong>Profil GitHub</strong> :<br />
+<a href="https://github.com/abrahamkoloboe27">https://github.com/abrahamkoloboe27</a><br />
+<em>(Projets open source et contributions communautaires)</em></p>
+<p><strong>LinkedIn</strong> :<br />
+<a href="https://www.linkedin.com/in/abraham-zacharie-koloboe-data-science-ia-generative-llms-machine-learning/">https://www.linkedin.com/in/abraham-zacharie-koloboe</a><br />
+<em>(Échangeons sur le DevOps, Data Engineering et MLops)</em></p>
+<hr />
+<h2 id="signaler-un-bug">🐛 Signaler un bug</h2>
+<p>Ouvrez une issue sur GitHub en précisant :</p>
+<ol>
+<li>
+<p>La commande exécutée </p>
+</li>
+<li>
+<p>Le message d'erreur complet</p>
+</li>
+<li>
+<p>Votre environnement (OS + version Docker)</p>
+</li>
+</ol>
+<p><a href="https://github.com/abrahamkoloboe27/Setup-Databases-With-Docker/issues/new">Créer une issue</a></p>
+<hr />
+<h2 id="bonnes-pratiques">❗ Bonnes pratiques</h2>
+<ul>
+<li>Toujours tester les sauvegardes  </li>
+<li>Utiliser des mots de passe complexes  </li>
+<li>Maintenir les images Docker à jour  </li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../dbeaver/" class="btn btn-neutral float-left" title="Dbeaver"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../dbeaver/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
