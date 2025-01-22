@@ -42,7 +42,27 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Accueil</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#contenu">Contenu</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ce-que-vous-trouverez-ici">🎯 Ce que vous trouverez ici</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demarrage-express">⚡ Démarrage Express</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sommaire-detaille">📖 Sommaire Détaillé</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#installation">🔧 Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#utilisation-du-makefile">🎛️ Utilisation du Makefile</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bases-de-donnees">📚 Bases de Données</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#avance">🧠 Avancé</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#faq">❓ FAQ</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ce-projet-est-ideal-pour">🛠️ Ce projet est idéal pour :</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prochaines-etapes">📌 Prochaines Étapes</a>
     </li>
     </ul>
                 </li>
@@ -101,17 +121,76 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="gestion-de-bases-de-donnees-avec-docker">Gestion de Bases de Données avec Docker</h1>
-<p>Bienvenue dans la documentation du projet ! Ce site vous guide dans la gestion et l'utilisation de plusieurs bases de données avec Docker.</p>
-<h2 id="contenu">Contenu</h2>
+                <h1 id="gestion-de-bases-de-donnees-avec-docker-makefile">🚀 Gestion de Bases de Données avec Docker &amp; Makefile 🐳</h1>
+<p><a href="https://github.com/abrahamkoloboe27/Setup-Databases-With-Docker"><img alt="GitHub stars" src="https://img.shields.io/github/stars/abrahamkoloboe27/Setup-Databases-With-Docker?style=social" /></a>
+<a href="https://opensource.org/licenses/MIT"><img alt="License" src="https://img.shields.io/badge/License-MIT-blue.svg" /></a>
+<a href="https://www.docker.com"><img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&amp;logoColor=white" /></a>
+<a href="https://www.gnu.org/software/make/"><img alt="GNU Make" src="https://img.shields.io/badge/GNU%20Make-FF6F00?logo=gnu&amp;logoColor=white" /></a>
+<a href="https://dbeaver.io"><img alt="DBeaver" src="https://img.shields.io/badge/DBeaver-2C2255?logo=eclipseide&amp;logoColor=white" /></a>
+<a href="https://www.mysql.com"><img alt="MySQL" src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&amp;logoColor=white" /></a>
+<a href="https://www.postgresql.org"><img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&amp;logoColor=white" /></a>
+<a href="https://www.mongodb.com"><img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&amp;logoColor=white" /></a>
+<a href="https://redis.io"><img alt="Redis" src="https://img.shields.io/badge/Redis-DC382D?logo=redis&amp;logoColor=white" /></a>
+<a href="https://cassandra.apache.org"><img alt="Cassandra" src="https://img.shields.io/badge/Cassandra-1287B1?logo=apachecassandra&amp;logoColor=white" /></a>
+<a href="https://mariadb.org"><img alt="MariaDB" src="https://img.shields.io/badge/MariaDB-003545?logo=mariadb&amp;logoColor=white" /></a>
+<strong>Bienvenue dans le guide ultime pour maîtriser vos bases de données en environnement Docker !</strong> 🌟<br />
+<em>Développez, testez et déployez en toute sérénité avec cette boîte à outils clé-en-main.</em> 🧰</p>
+<h2 id="ce-que-vous-trouverez-ici">🎯 Ce que vous trouverez ici</h2>
+<p>✅ <strong>Une installation simplifiée</strong><br />
+✅ <strong>Des commandes Docker optimisées</strong> grâce à Makefile<br />
+✅ <strong>Des configurations prêtes pour 6 bases de données</strong><br />
+✅ <strong>Des astuces pro pour DBeaver</strong><br />
+✅ <strong>Des solutions aux erreurs courantes</strong></p>
+<h2 id="demarrage-express">⚡ Démarrage Express</h2>
+<ol>
+<li>
+<p>Clonez le dépôt :<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/abrahamkoloboe27/Setup-Databases-With-Docker.git
+</code></pre></div></p>
+</li>
+<li>
+<p>Lancez TOUT l'écosystème :<br />
+   <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>Setup-Databases-With-Docker<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>run-all
+</code></pre></div></p>
+</li>
+<li>
+<p>Accédez à DBeaver :<br />
+   🌐 <a href="http://localhost:8080">http://localhost:8080</a></p>
+</li>
+</ol>
+<p><em>En 3 commandes, vos bases sont opérationnelles !</em> 🎉</p>
+<h2 id="sommaire-detaille">📖 Sommaire Détaillé</h2>
+<h3 id="installation">🔧 Installation</h3>
+<p><img alt="Setup" src="https://img.icons8.com/clouds/100/000000/settings.png" /><br />
+Prérequis • Procédure pas-à-pas • Vérifications</p>
+<h3 id="utilisation-du-makefile">🎛️ Utilisation du Makefile</h3>
+<p><img alt="Terminal" src="https://img.icons8.com/clouds/100/000000/console.png" /><br />
+Commandes magiques • Exemples concrets • Personnalisation</p>
+<h3 id="bases-de-donnees">📚 Bases de Données</h3>
+<p><img alt="Databases" src="https://img.icons8.com/clouds/100/000000/database.png" /><br />
+| Base         | 🐬 MySQL | 🐘 PostgreSQL | 🍃 MongoDB | 🔴 Redis | 🗃️ Cassandra | 🌿 MariaDB |
+|--------------|----------|---------------|------------|----------|---------------|------------|
+| <strong>Port</strong>     | 3306     | 1234          | 27017      | 6379     | 9042          | 3307       |</p>
+<h3 id="avance">🧠 Avancé</h3>
+<p><img alt="Advanced" src="https://img.icons8.com/clouds/100/000000/maintenance.png" /><br />
+Optimisation • Monitoring • Sécurité • Backup</p>
+<h3 id="faq">❓ FAQ</h3>
+<p><img alt="FAQ" src="https://img.icons8.com/clouds/100/000000/qa.png" /><br />
+Dépannage • Bonnes pratiques • Contributions</p>
+<h2 id="ce-projet-est-ideal-pour">🛠️ Ce projet est idéal pour :</h2>
 <ul>
-<li><strong>Installation</strong> : Préparer l'environnement.</li>
-<li><strong>Utilisation de Makefile</strong> : Simplifiez vos commandes Docker.</li>
-<li><strong>Bases de Données</strong> : Instructions spécifiques pour chaque base.</li>
-<li><strong>Avancé</strong> : Concepts avancés et bonnes pratiques.</li>
-<li><strong>FAQ</strong> : Questions fréquentes et solutions.</li>
+<li>🧑💻 <strong>Développeurs full-stack</strong> voulant un environnement unifié  </li>
+<li>📊 <strong>Data engineers</strong> travaillant sur des architectures hybrides  </li>
+<li>🎓 <strong>Étudiants</strong> découvrant les bases de données  </li>
+<li>🚀 <strong>Startups</strong> prototypant rapidement des solutions</li>
 </ul>
-<p>Bonne lecture !</p>
+<h2 id="prochaines-etapes">📌 Prochaines Étapes</h2>
+<ol>
+<li>📥 <a href="installation/">Installation</a> - Configurez votre environnement  </li>
+<li>🧪 <a href="databases/mysql/">Tester une base</a> - Commencez avec MySQL  </li>
+<li>🎨 <a href="advanced.md">Personnaliser</a> - Adaptez à vos besoins  </li>
+</ol>
+<p><em>Prêt à dompter vos données ? Let's go!</em> 🚀💡  </p>
               
             </div>
           </div><footer>
@@ -160,5 +239,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-01-22 17:37:52.867164+00:00
+Build Date UTC : 2025-01-22 17:42:44.561085+00:00
 -->
