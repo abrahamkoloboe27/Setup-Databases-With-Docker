@@ -1,6 +1,4 @@
-# PostgreSQL 🐘
-
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+# PostgreSQL [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
 PostgreSQL est une base de données relationnelle puissante et open source qui met l'accent sur l'extensibilité et la conformité avec les standards SQL.
 

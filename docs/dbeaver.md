@@ -16,11 +16,14 @@ Accédez ensuite à l'interface web 🌐:
 http://localhost:8080
 ```
 
+
 ### Première configuration ⚙️
 1. Créez un compte admin lors du premier accès
-2. Sélectionnez votre langue préférée
-3. Configurez vos connexions via le menu "Database"
 
+![Interface DBeaver](img/dbeaver.png)
+
+
+2. Configurez vos connexions via le menu "Database"
 
 
 ## Configuration des connexions 🔌
@@ -30,7 +33,7 @@ http://localhost:8080
 ![Interface MariaDB](img/mariadb.png)
 ```properties
 Type: MariaDB
-Host: localhost
+Host: host.docker.internal ou localhost  
 Port: 3307
 Database: mariadb
 User: mariadb
@@ -45,7 +48,7 @@ Paramètres avancés :
 ![Interface PostgreSQL](img/postgres.png)
 ```properties
 Type: PostgreSQL
-Host: localhost
+Host: host.docker.internal ou localhost  
 Port: 1234
 Database: postgres
 User: postgres
@@ -58,7 +61,7 @@ Paramètres SSL : Désactivé
 ![Interface MySQL](img/mysql.png)
 ```properties
 Type: MySQL
-Host: localhost
+Host: host.docker.internal ou localhost  
 Port: 3306
 Database: mysql
 User: root

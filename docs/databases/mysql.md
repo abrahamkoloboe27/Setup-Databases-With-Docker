@@ -1,4 +1,4 @@
-# MySQL 🎯 [![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
+# MySQL [![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
 
 MySQL est un système de gestion de base de données relationnelle open source, connu pour sa simplicité, sa rapidité et son utilisation dans de nombreuses applications web. 🚀
 

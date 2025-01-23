@@ -220,3 +220,10 @@ clean-all: ## Arrêt et suppression de toutes les bases de données
 
 clear-all-volumes: ## Suppression de tous les volumes
 	docker volume rm $(docker volume ls -q)
+
+up-compose : ## Lancement de toutes les bases de données via docker-compose
+	docker-compose up -d
+down-compose : ## Arrêt de toutes les bases de données via docker-compose
+	docker-compose down
+down-volumes-compose : ## Arrêt de toutes les bases de données et suppression des volumes via docker-compose
+	docker-compose down -v

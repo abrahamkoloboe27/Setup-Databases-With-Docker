@@ -411,7 +411,7 @@
         <li class="md-nav__item">
   <a href="#prerequis" class="md-nav__link">
     <span class="md-ellipsis">
-      Prérequis
+      🔧 Prérequis
     </span>
   </a>
   
@@ -420,7 +420,7 @@
         <li class="md-nav__item">
   <a href="#etapes-dinstallation" class="md-nav__link">
     <span class="md-ellipsis">
-      Étapes d'installation
+      📝 Étapes d'installation
     </span>
   </a>
   
@@ -429,7 +429,7 @@
         <li class="md-nav__item">
   <a href="#post-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Post-installation
+      🎉 Post-installation
     </span>
   </a>
   
@@ -438,16 +438,16 @@
         <li class="md-nav__item">
   <a href="#depannage-initial" class="md-nav__link">
     <span class="md-ellipsis">
-      Dépannage initial
+      🔧 Dépannage initial
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes-techniques" class="md-nav__link">
+  <a href="#i-notes-techniques" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes techniques
+      ℹ️ Notes techniques
     </span>
   </a>
   
@@ -735,7 +735,7 @@
         <li class="md-nav__item">
   <a href="#prerequis" class="md-nav__link">
     <span class="md-ellipsis">
-      Prérequis
+      🔧 Prérequis
     </span>
   </a>
   
@@ -744,7 +744,7 @@
         <li class="md-nav__item">
   <a href="#etapes-dinstallation" class="md-nav__link">
     <span class="md-ellipsis">
-      Étapes d'installation
+      📝 Étapes d'installation
     </span>
   </a>
   
@@ -753,7 +753,7 @@
         <li class="md-nav__item">
   <a href="#post-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Post-installation
+      🎉 Post-installation
     </span>
   </a>
   
@@ -762,16 +762,16 @@
         <li class="md-nav__item">
   <a href="#depannage-initial" class="md-nav__link">
     <span class="md-ellipsis">
-      Dépannage initial
+      🔧 Dépannage initial
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes-techniques" class="md-nav__link">
+  <a href="#i-notes-techniques" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes techniques
+      ℹ️ Notes techniques
     </span>
   </a>
   
@@ -793,47 +793,47 @@
 
 
 <h1 id="installation">📥 Installation</h1>
-<h2 id="prerequis">Prérequis</h2>
+<h2 id="prerequis">🔧 Prérequis</h2>
 <ul>
-<li><a href="https://docs.docker.com/get-docker/">Docker</a> (version 20.10+)</li>
-<li><a href="https://docs.docker.com/compose/install/">Docker Compose</a> (optionnel)</li>
-<li><a href="https://git-scm.com/downloads">Git</a></li>
-<li>Terminal compatible Unix (Bash/Zsh)</li>
-<li>2 Go de RAM minimum</li>
+<li>🐳 <a href="https://docs.docker.com/get-docker/">Docker</a> (version 20.10+)</li>
+<li>🐋 <a href="https://docs.docker.com/compose/install/">Docker Compose</a> (optionnel)</li>
+<li>🌲 <a href="https://git-scm.com/downloads">Git</a></li>
+<li>💻 Terminal compatible Unix (Bash/Zsh)</li>
+<li>🧮 2 Go de RAM minimum</li>
 </ul>
-<h2 id="etapes-dinstallation">Étapes d'installation</h2>
+<h2 id="etapes-dinstallation">📝 Étapes d'installation</h2>
 <ol>
 <li>
-<p><strong>Cloner le dépôt</strong> :
-   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/votre-utilisateur/docker-db-starter.git
+<p><strong>📂 Cloner le dépôt</strong> :
+  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/votre-utilisateur/docker-db-starter.git
 <span class="nb">cd</span><span class="w"> </span>docker-db-starter
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>Démarrer toutes les bases de données</strong> :
-   <div class="highlight"><pre><span></span><code>make<span class="w"> </span>run-all
+<p><strong>🚀 Démarrer toutes les bases de données</strong> :
+  <div class="highlight"><pre><span></span><code>make<span class="w"> </span>run-all
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>Vérifier le fonctionnement</strong> :
-   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>ps<span class="w"> </span>--format<span class="w"> </span><span class="s2">&quot;table {{.Names}}\t{{.Ports}}\t{{.Status}}&quot;</span>
+<p><strong>✅ Vérifier le fonctionnement</strong> :
+  <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>ps<span class="w"> </span>--format<span class="w"> </span><span class="s2">&quot;table {{.Names}}\t{{.Ports}}\t{{.Status}}&quot;</span>
 </code></pre></div>
-   Sortie attendue :
-   <div class="highlight"><pre><span></span><code>NAMES              PORTS                     STATUS
+  Sortie attendue :
+  <div class="highlight"><pre><span></span><code>NAMES              PORTS                     STATUS
 postgres           0.0.0.0:1234-&gt;5432/tcp    Up 2 minutes
 mysql-local        0.0.0.0:3306-&gt;3306/tcp    Up 2 minutes
 redis-local        0.0.0.0:6379-&gt;6379/tcp    Up 2 minutes
 </code></pre></div></p>
 </li>
 </ol>
-<h2 id="post-installation">Post-installation</h2>
+<h2 id="post-installation">🎉 Post-installation</h2>
 <ul>
 <li>
-<p>Accéder à <strong>DBeaver</strong> : http://localhost:8080<br />
+<p>🌐 Accéder à <strong>DBeaver</strong> : http://localhost:8080<br />
 <em>(Créez un compte admin au premier lancement)</em></p>
 </li>
 <li>
-<p>Les données sont persistées dans :
+<p>💾 Les données sont persistées dans :
   <div class="highlight"><pre><span></span><code>~/docker/
 ├──<span class="w"> </span>mysqldata<span class="w">    </span><span class="c1"># MySQL</span>
 ├──<span class="w"> </span>pgdata<span class="w">       </span><span class="c1"># PostgreSQL</span>
@@ -841,7 +841,7 @@ redis-local        0.0.0.0:6379-&gt;6379/tcp    Up 2 minutes
 </code></pre></div></p>
 </li>
 </ul>
-<h2 id="depannage-initial">Dépannage initial</h2>
+<h2 id="depannage-initial">🔧 Dépannage initial</h2>
 <p>Si un service ne démarre pas :
 <div class="highlight"><pre><span></span><code><span class="c1"># Voir les logs d&#39;un conteneur</span>
 docker<span class="w"> </span>logs<span class="w"> </span>mysql-local<span class="w"> </span>-f
@@ -849,14 +849,14 @@ docker<span class="w"> </span>logs<span class="w"> </span>mysql-local<span class
 <span class="c1"># Réinitialiser complètement</span>
 make<span class="w"> </span>clean-all<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>run-all
 </code></pre></div></p>
-<h2 id="notes-techniques">Notes techniques</h2>
+<h2 id="i-notes-techniques">ℹ️ Notes techniques</h2>
 <ul>
-<li>Compatible avec :</li>
-<li>Linux (toutes distros)</li>
-<li>macOS 10.15+</li>
-<li>Windows via WSL2</li>
-<li>Consommation mémoire : ~500 MB au total</li>
-<li>Taille totale des images : ~1.2 GB</li>
+<li>✨ Compatible avec :</li>
+<li>🐧 Linux (toutes distros)</li>
+<li>🍎 macOS 10.15+</li>
+<li>🪟 Windows via WSL2</li>
+<li>🧮 Consommation mémoire : ~500 MB au total</li>
+<li>💿 Taille totale des images : ~1.2 GB</li>
 </ul>
 
 

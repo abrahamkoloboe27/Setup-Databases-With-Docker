@@ -5,11 +5,13 @@
 ### 🔑 Erreur "Public Key Retrieval" avec MySQL
 **Solution** :  
 1. Dans DBeaver > Propriétés du pilote :
+   
+![DBeaver MySQL Properties](img/dbeaver-mysql.png)
 ```properties
 allowPublicKeyRetrieval = true  
 useSSL = false  
 ```
-2. Redémarrez le conteneur :
+1. Redémarrez le conteneur :
 ```bash
 make clean-mysql && make run-mysql
 ```

@@ -1,0 +1,95 @@
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "1234:5432"
+    volumes:
+      - ${HOME}/docker/pgdata:/var/lib/postgresql/data
+    networks:
+      - database
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql-local
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "3306:3306"
+    volumes:
+      - ${HOME}/docker/mysqldata:/var/lib/mysql
+      - ${HOME}/docker/mysql-conf:/etc/mysql/conf.d
+    networks:
+      - database
+
+  redis:
+    image: redis:7
+    container_name: redis-local
+    ports:
+      - "6379:6379"
+    volumes:
+      - ${HOME}/docker/redisdata:/data
+    networks:
+      - database
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo-local
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+      MONGO_INITDB_DATABASE: test
+    ports:
+      - "27017:27017"
+    volumes:
+      - ${HOME}/docker/mongodata:/data/db
+    networks:
+      - database
+
+  cassandra:
+    image: cassandra:4.1
+    container_name: cassandra-local
+    environment:
+      CASSANDRA_USER: cassandra
+      CASSANDRA_PASSWORD: cassandra
+    ports:
+      - "9042:9042"
+    volumes:
+      - ${HOME}/docker/cassandradata:/var/lib/cassandra
+    networks:
+      - database
+
+  mariadb:
+    image: mariadb:10.10
+    container_name: mariadb-local
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_USER: mariadb
+      MARIADB_PASSWORD: mariadb
+      MARIADB_DATABASE: mariadb
+    ports:
+      - "3307:3306"
+    volumes:
+      - ${HOME}/docker/mariadbdata:/var/lib/mysql
+    networks:
+      - database
+
+  dbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: cloudbeaver
+    ports:
+      - "8080:8978"
+    volumes:
+      - ${HOME}/docker/cloudbeaver:/opt/cloudbeaver/workspace
+    restart: unless-stopped
+    networks:
+      - database
+
+networks:
+  database:
+    driver: bridge
