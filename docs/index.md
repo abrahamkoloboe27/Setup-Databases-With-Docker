@@ -1,3 +1,5 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
 # 🚀 Gestion de Bases de Données avec Docker & Makefile 🐳
 
 [![GitHub stars](https://img.shields.io/github/stars/abrahamkoloboe27/Setup-Databases-With-Docker?style=social)](https://github.com/abrahamkoloboe27/Setup-Databases-With-Docker)
@@ -58,10 +60,13 @@ Prérequis • Procédure pas-à-pas • Vérifications
 Commandes magiques • Exemples concrets • Personnalisation
 
 ### 📚 Bases de Données
+
 ![Databases](https://img.icons8.com/clouds/100/000000/database.png)  
+
 | Base         | 🐬 MySQL | 🐘 PostgreSQL | 🍃 MongoDB | 🔴 Redis | 🗃️ Cassandra | 🌿 MariaDB |
 |--------------|----------|---------------|------------|----------|---------------|------------|
 | **Port**     | 3306     | 1234          | 27017      | 6379     | 9042          | 3307       |
+
 
 ### 🧠 Avancé
 ![Advanced](https://img.icons8.com/clouds/100/000000/maintenance.png)  

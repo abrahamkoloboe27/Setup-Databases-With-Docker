@@ -1,9 +1,15 @@
 site_name: Docker DB Starter Guide
-theme: 
-  name: readthedocs
+theme:
+  name: material
   features:
     - navigation.tabs
     - navigation.indexes
+  extra_css:
+    - stylesheets/custom.css
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - bash
   palette:
     - scheme: default
       primary: teal

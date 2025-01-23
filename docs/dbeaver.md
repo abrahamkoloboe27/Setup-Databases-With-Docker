@@ -1,31 +1,32 @@
-# DBeaver
+# DBeaver [![DBeaver](https://img.shields.io/badge/DBeaver-EE6E04?logo=dbeaver&logoColor=white)](https://dbeaver.io)
 
-DBeaver est un client SQL universel et une interface d'administration de bases de données qui supporte plus de 80 systèmes de bases de données différents.
+DBeaver est un client universel et une interface d'administration de bases de données qui supporte plus de 80 systèmes de bases de données différents. 🌟
 
----
 
-## Lancement de DBeaver
+
+## Lancement de DBeaver 🚀
 
 ### Via le Makefile
 ```bash
 make run-dbeaver
 ```
 
-Accédez ensuite à l'interface web :
+Accédez ensuite à l'interface web 🌐:
 ```
 http://localhost:8080
 ```
 
-### Première configuration
+### Première configuration ⚙️
 1. Créez un compte admin lors du premier accès
 2. Sélectionnez votre langue préférée
 3. Configurez vos connexions via le menu "Database"
 
----
 
-## Configuration des connexions
 
-### MariaDB
+## Configuration des connexions 🔌
+
+### MariaDB [![MariaDB](https://img.shields.io/badge/MariaDB-003545?logo=mariadb&logoColor=white)](https://mariadb.org)
+
 ![Interface MariaDB](img/mariadb.png)
 ```properties
 Type: MariaDB
@@ -39,7 +40,8 @@ Paramètres avancés :
   useSSL=false
 ```
 
-### PostgreSQL
+### PostgreSQL [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)](https://www.postgresql.org)
+
 ![Interface PostgreSQL](img/postgres.png)
 ```properties
 Type: PostgreSQL
@@ -51,7 +53,8 @@ Password: postgres
 Paramètres SSL : Désactivé
 ```
 
-### MySQL
+### MySQL [![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com)
+
 ![Interface MySQL](img/mysql.png)
 ```properties
 Type: MySQL
@@ -66,19 +69,19 @@ Paramètres critiques :
 ```
 
 
----
 
-## Fonctionnalités clés
 
-- Éditeur SQL intelligent avec auto-complétion
-- Visualisation des schémas de base de données
-- Gestion des utilisateurs et permissions
-- Import/Export de données en multiples formats
-- Monitoring des performances en temps réel
+## Fonctionnalités clés 🔑
 
----
+- Éditeur SQL intelligent avec auto-complétion ✨
+- Visualisation des schémas de base de données 📊
+- Gestion des utilisateurs et permissions 👥
+- Import/Export de données en multiples formats 📤📥
+- Monitoring des performances en temps réel 📈
 
-## Dépannage MySQL
+
+
+## Dépannage MySQL 🔧
 
 **Erreur "Public Key Retrieval"** :
 1. Dans l'onglet "Paramètres du pilote" :
@@ -92,23 +95,24 @@ Paramètres critiques :
    make clean-mysql && make run-mysql
    ```
 
----
 
-## Bonnes pratiques
+
+## Bonnes pratiques ✅
 
 - Utilisez des connexions séparées pour chaque environnement (dev/test/prod)
-- Activez le chiffrement SSL pour les connexions externes
-- Sauvegardez régulièrement vos configurations de connexion
-- Utilisez les snippets SQL pour les requêtes récurrentes
+- Activez le chiffrement SSL pour les connexions externes 🔒
+- Sauvegardez régulièrement vos configurations de connexion 💾
+- Utilisez les snippets SQL pour les requêtes récurrentes 📝
 
----
 
-## Liens utiles
+
+## Liens utiles 🔗
 
 - [Site officiel DBeaver](https://dbeaver.io/)
 - [Documentation complète](https://github.com/dbeaver/dbeaver/wiki)
 - [Guide des pilotes JDBC](https://dbeaver.com/docs/wiki/JDBC-Drivers/)
 
----
 
-DBeaver simplifie la gestion multi-bases grâce à son interface unifiée. Son support étendu des drivers et ses fonctionnalités d'exploration de données en font un outil indispensable pour les développeurs et DBA.
+
+DBeaver simplifie la gestion multi-bases grâce à son interface unifiée. Son support étendu des drivers et ses fonctionnalités d'exploration de données en font un outil indispensable pour les développeurs et DBA. 🚀
+
