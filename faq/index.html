@@ -992,11 +992,12 @@
 <h2 id="problemes-courants">🔧 Problèmes courants</h2>
 <h3 id="erreur-public-key-retrieval-avec-mysql">🔑 Erreur "Public Key Retrieval" avec MySQL</h3>
 <p><strong>Solution</strong> :<br />
-1. Dans DBeaver &gt; Propriétés du pilote :
+1. Dans DBeaver &gt; Propriétés du pilote :</p>
+<p><img alt="DBeaver MySQL Properties" src="../img/dbeaver-mysql.png" />
 <div class="highlight"><pre><span></span><code><span class="na">allowPublicKeyRetrieval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true  </span>
 <span class="na">useSSL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false  </span>
 </code></pre></div>
-2. Redémarrez le conteneur :
+1. Redémarrez le conteneur :
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>clean-mysql<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>run-mysql
 </code></pre></div></p>
 <h3 id="reinitialiser-toutes-les-donnees">🔄 Réinitialiser toutes les données</h3>
